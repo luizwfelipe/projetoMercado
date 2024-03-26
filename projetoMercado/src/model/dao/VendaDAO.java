@@ -18,19 +18,17 @@ public class VendaDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("SELECT v.idVenda, v.idProduto, p.nome, v.quantidade, p.preco \n" +
-                                            "FROM venda v \n" +
-                                            "JOIN produto p ON v.idProduto = p.idProduto");
+            stmt = conexao.prepareStatement("SELECT FROM venda (idVenda, idProduto, nome, quantidade, preco)");
             
             rs = stmt.executeQuery();
                      
             while (rs.next()) {
                 MercadinhoDTO venda = new MercadinhoDTO();
                 venda.setIdVenda(rs.getInt("idVenda"));
-                venda.setIdProduto(rs.getInt("idProduto"));
-                venda.setNome(rs.getString("nome"));
-                venda.setQuantidadeProduto(rs.getInt("quantidade"));
-                venda.setPreco(rs.getFloat("preco"));                
+                venda.setIdProdutoVenda(rs.getInt("idProduto"));
+                venda.setNomeVenda(rs.getString("nome"));
+                venda.setQuantidade(rs.getInt("quantidade"));
+                venda.setPrecoVenda(rs.getFloat("preco"));                
                 listaVenda.add(venda);
             }
             
@@ -49,10 +47,11 @@ public class VendaDAO {
         Connection conexao = Conexao.conectar();
         PreparedStatement stmt = null;
         
-        stmt = conexao.prepareStatement("INSERT INTO venda (dataVenda, precoTotal, quantidade, idUsuario, idProduto) VALUES (CURDATE(), ?, ? ,? ,?)");
-        stmt.setDate(1,venda.getDataVenda());
-        stmt.setFloat(2, venda.getPrecoTotal());
-        stmt.setInt(3, venda.getQuantidadeProduto());
+        stmt = conexao.prepareStatement("INSERT INTO venda (idProduto, nome, quantidade, preco) VALUES (?, ? ,? ,?)");
+        stmt.setInt(1, venda.getIdProdutoVenda());
+        stmt.setString(2, venda.getNomeVenda());
+        stmt.setInt(2, venda.getQuantidade());
+        stmt.setFloat(3, venda.getPrecoVenda());
         
         } catch (SQLException e) {
             e.printStackTrace();
