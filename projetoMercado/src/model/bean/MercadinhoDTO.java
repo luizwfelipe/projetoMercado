@@ -45,7 +45,7 @@ public class MercadinhoDTO {
     public MercadinhoDTO() {
     }
 
-    public MercadinhoDTO(int idUsuario, String nome, String login, String senha, String telefone, String endereco, int idAdmin, String nomeAdm, String loginAdm, String senhaAdm, int idProduto, String nomeProduto, String descricao, float preco, int estoque, int idVenda, int idProdutoVenda, String nomeVenda, int quantidade, float precoVenda, int idBackup, String nomeBackup, String loginBackup, String senhaBackup, String telefoneBackup, String enderecoBackup, Time exclusaoUsuario) {
+    public MercadinhoDTO(int idUsuario, String nome, String login, String senha, String telefone, String endereco, int idAdmin, String nomeAdm, String loginAdm, String senhaAdm, int idProduto, String nomeProduto, String descricao, float preco, int estoque, String categoria, int idVenda, int idProdutoVenda, String nomeVenda, int quantidade, float precoVenda, int idBackup, String nomeBackup, String loginBackup, String senhaBackup, String telefoneBackup, String enderecoBackup, Time exclusaoUsuario) {
         this.idUsuario = idUsuario;
         this.nome = nome;
         this.login = login;
@@ -61,6 +61,7 @@ public class MercadinhoDTO {
         this.descricao = descricao;
         this.preco = preco;
         this.estoque = estoque;
+        this.categoria = categoria;
         this.idVenda = idVenda;
         this.idProdutoVenda = idProdutoVenda;
         this.nomeVenda = nomeVenda;
@@ -195,6 +196,14 @@ public class MercadinhoDTO {
         this.estoque = estoque;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public int getIdVenda() {
         return idVenda;
     }
@@ -289,5 +298,7 @@ public class MercadinhoDTO {
 
     public void setExclusaoUsuario(Time exclusaoUsuario) {
         this.exclusaoUsuario = exclusaoUsuario;
-    }  
+    }
+
+    
 }

@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import model.bean.MercadinhoDTO;
 
 public class ProdutoDAO {
@@ -18,7 +19,7 @@ public class ProdutoDAO {
 
         try {
             conexao = Conexao.conectar();
-            stmt = conexao.prepareStatement("SELECT idProduto, nomeProduto, descricao, preco, estoque FROM produto");
+            stmt = conexao.prepareStatement("SELECT idProduto, nomeProduto, descricao, preco, estoque, categoria FROM produto");
             rs = stmt.executeQuery();
             while (rs.next()) {
                 MercadinhoDTO produto = new MercadinhoDTO();
@@ -27,6 +28,7 @@ public class ProdutoDAO {
                 produto.setDescricao(rs.getString("descricao"));
                 produto.setPreco(rs.getFloat("preco"));
                 produto.setEstoque(rs.getInt("estoque"));
+                produto.setCategoria(rs.getString("categoria"));
                 listaProduto.add(produto);
             }
         } catch (SQLException ex) {
@@ -41,6 +43,69 @@ public class ProdutoDAO {
             }
         }
         return listaProduto;
+    }
+    
+    public void create(MercadinhoDTO p) {
+
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+            stmt = conexao.prepareStatement("INSERT INTO produto (nomeProduto, descricao, preco, estoque, categoria) VALUES (?, ?, ? ,? ,?)");
+            stmt.setString(1, p.getNomeProduto());
+            stmt.setString(2, p.getDescricao());
+            stmt.setFloat(3, p.getPreco());
+            stmt.setInt(4, p.getEstoque());
+            stmt.setString(5, p.getCategoria());
+            
+            stmt.executeUpdate();
+
+            stmt.close();
+            conexao.close();
+            
+            JOptionPane.showMessageDialog(null, "Produto criado com sucesso!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void delete(int idProduto) {
+    try {
+        Connection conexao = Conexao.conectar();
+        PreparedStatement stmt = conexao.prepareStatement("DELETE FROM produto WHERE idProduto = ?");
+        stmt.setInt(1, idProduto);
+        stmt.executeUpdate();
+        stmt.close();
+        conexao.close();
+        JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+    
+    public void update(MercadinhoDTO p) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("UPDATE produto SET nomeProduto = ?, descricao = ?, preco = ?, estoque = ?, categoria = ? WHERE idProduto = ? ");
+
+            stmt.setString(1, p.getNome());
+            stmt.setString(2, p.getDescricao());
+            stmt.setFloat(3, p.getPreco());
+            stmt.setInt(4, p.getEstoque());
+            stmt.setString(5, p.getCategoria());
+            stmt.setInt(6, p.getIdProduto());
+            
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
+
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public int consultarEstoque(int idProduto) {
