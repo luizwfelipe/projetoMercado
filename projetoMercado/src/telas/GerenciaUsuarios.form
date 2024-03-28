@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<<<<<<< HEAD
   <NonVisualComponents>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -17,6 +18,8 @@
       </Events>
     </Component>
   </NonVisualComponents>
+=======
+>>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="undecorated" type="boolean" value="true"/>

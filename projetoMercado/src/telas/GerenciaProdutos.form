@@ -50,6 +50,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -84,6 +85,16 @@
                                   <Component id="jTextField1" max="32767" attributes="0"/>
                                   <Component id="jScrollPane1" pref="632" max="32767" attributes="0"/>
                               </Group>
+=======
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="inputNome" min="-2" pref="605" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="btnAdd" min="-2" pref="132" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="btnEdit" min="-2" pref="132" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnDelete" min="-2" pref="132" max="-2" attributes="0"/>
+>>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
                           </Group>
                       </Group>
                   </Group>
@@ -95,6 +106,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -142,6 +154,30 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="584" max="-2" attributes="0"/>
                       </Group>
+=======
+                  <Component id="inputNome" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="inputDesc" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="inputPreco" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="inputEstoque" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="inputCategoria" min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnAdd" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="btnEdit" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="btnDelete" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+>>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -219,20 +255,28 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
             <Property name="text" type="java.lang.String" value="EXCLUIR"/>
           </Properties>
           <Events>
+<<<<<<< HEAD
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+=======
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+>>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnEdit">
           <Properties>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
           </Properties>
           <Events>
+<<<<<<< HEAD
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+=======
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
+>>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">

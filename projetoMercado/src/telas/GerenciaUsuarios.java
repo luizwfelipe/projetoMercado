@@ -10,7 +10,6 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import model.bean.MercadinhoDTO;
-import model.dao.ProdutoDAO;
 import model.dao.UsuarioDAO;
 
 /**
@@ -269,8 +268,7 @@ MercadinhoDTO usuario = new MercadinhoDTO();
     }// </editor-fold>//GEN-END:initComponents
     public void readJtable() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaUsuarios.getModel();
-        modelo.setNumRows(0);
-        UsuarioDAO dao = new UsuarioDAO();
+        modelo.setNumRows(0);      
         for (MercadinhoDTO p : dao.read()) {
             modelo.addRow(new Object[]{
                 p.getIdUsuario(),
@@ -305,7 +303,26 @@ MercadinhoDTO usuario = new MercadinhoDTO();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        // TODO add your handling code here:
+        int linhaSelecionada = tabelaUsuarios.getSelectedRow();
+
+        if (linhaSelecionada != - 1) {
+            MercadinhoDTO u = new MercadinhoDTO();
+            UsuarioDAO dao = new UsuarioDAO();
+
+        u.setNome(inputNome.getText());
+        u.setLogin(inputLogin.getText());
+        u.setSenha(inputSenha.getText());
+        u.setTelefone(inputTelefone.getText());
+        u.setEndereco(inputEndereco.getText());
+
+            if (u.getNome().trim().equals("") || u.getLogin().trim().equals("") || u.getSenha().trim().equals("") || u.getTelefone().trim().equals("") || u.getEndereco().trim().equals(""))  {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+            } else {
+                u.setIdUsuario((int) tabelaUsuarios.getValueAt(tabelaUsuarios.getSelectedRow(), 0));
+                dao.update(u);
+                readJtable();
+            }
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -316,9 +333,8 @@ MercadinhoDTO usuario = new MercadinhoDTO();
         } else {
             int idUsuario = (int) tabelaUsuarios.getValueAt(selectedRow, 0);
             int option = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja excluir este usuário?", "Confirmação", JOptionPane.YES_NO_OPTION);
-            if (option == JOptionPane.YES_OPTION) {
-            UsuarioDAO usuarios = new UsuarioDAO();
-            usuarios.delete(idUsuario);
+            if (option == JOptionPane.YES_OPTION) {          
+            dao.delete(idUsuario);
             readJtable();
         }
     }

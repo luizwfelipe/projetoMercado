@@ -23,12 +23,11 @@ senha VARCHAR(110) NOT NULL );
 
 CREATE TABLE produto (
 idProduto INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(110) NOT NULL,
+nomeProduto VARCHAR(110) NOT NULL,
 descricao TEXT,
 preco FLOAT (10,2) NOT NULL,
 estoque INT NOT NULL,
-idCategoria INT,
-FOREIGN KEY (idCategoria) REFERENCES categoria (idCategoria)
+categoria VARCHAR(45)
 );
 
 CREATE TABLE backupUsuario (
@@ -42,10 +41,31 @@ exclusaoUsuario DATETIME NOT NULL);
 
 CREATE TABLE venda (
 idVenda INT AUTO_INCREMENT PRIMARY KEY,
-dataVenda DATETIME,
-precoTotal FLOAT (10,2),
-quantidade INT NOT NULL,
-idUsuario INT,
 idProduto INT,
-FOREIGN KEY (idUsuario) REFERENCES usuario (idUsuario),
-FOREIGN KEY (idProduto) REFERENCES produto (idProduto) );
+nome VARCHAR(110) NOT NULL,
+quantidade int NOT NULL,
+preco float NOT NULL);
+
+INSERT INTO produto (nomeProduto,descricao,preco,estoque)
+VALUES ('Bolo','Desc1',5.90,5),('Pão','Desc2',8.90,10);
+
+INSERT INTO produto (nomeProduto,descricao,preco,estoque)
+VALUES ('Pão','Pão de Forma 200g', 8.9, 10);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Leite', 'Leite integral 1L', 3.50, 20);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Arroz', 'Arroz branco tipo 1, pacote de 5kg', 15.99, 100);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Feijão', 'Feijão carioca, pacote de 1kg', 5.49, 150);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Azeite de Oliva', 'Azeite de oliva extra virgem, garrafa de 500ml', 19.99, 80);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Carne Bovina', 'Carne bovina de primeira, kg', 29.99, 50);
+
+INSERT INTO produto (nomeProduto, descricao, preco, estoque)
+VALUES ('Sabonete', 'Sabonete líquido neutro, frasco de 250ml', 2.99, 120);
