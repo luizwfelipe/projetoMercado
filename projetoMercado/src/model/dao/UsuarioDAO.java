@@ -107,4 +107,30 @@ public class UsuarioDAO {
         e.printStackTrace();
     }
 }
+    
+    public void update(MercadinhoDTO u) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = null;
+
+            stmt = conexao.prepareStatement("UPDATE usuario SET nome = ?, login = ?, senha = ?, telefone = ?, endereco = ? WHERE idUsuario = ? ");
+
+            stmt.setString(1, u.getNome());
+            stmt.setString(2, u.getLogin());
+            stmt.setString(3, u.getSenha());
+            stmt.setString(4, u.getTelefone());
+            stmt.setString(5, u.getEndereco());
+            stmt.setInt(6, u.getIdUsuario());
+            
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
+
+            stmt.close();
+            conexao.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
 }
