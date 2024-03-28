@@ -24,6 +24,7 @@ public class MercadinhoDTO {
     private String descricao;
     private float preco;
     private int estoque;
+    private String categoria;
     //----------------------------------
     //Tabela venda
     private int idVenda;

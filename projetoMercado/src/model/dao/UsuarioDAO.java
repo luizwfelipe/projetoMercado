@@ -94,4 +94,17 @@ public class UsuarioDAO {
         }
         return validar;
     }
+    public void delete(int idUsuario) {
+    try {
+        Connection conexao = Conexao.conectar();
+        PreparedStatement stmt = conexao.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
+        stmt.setInt(1, idUsuario);
+        stmt.executeUpdate();
+        stmt.close();
+        conexao.close();
+        JOptionPane.showMessageDialog(null, "Deletado com sucesso!");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 }
