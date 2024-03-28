@@ -12,24 +12,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
     public GerenciaProdutos() {
         initComponents();
         readJtable();
-<<<<<<< HEAD
-    }
-
-    public void readJtable() {
-        DefaultTableModel modelo = (DefaultTableModel) tabelaProdutos.getModel();
-        modelo.setNumRows(0);      
-        for (MercadinhoDTO p : dao.readProdutos()) {
-            modelo.addRow(new Object[]{
-                p.getIdProduto(),
-                p.getNome(),
-                p.getDescricao(),
-                p.getPreco(),
-                p.getEstoque(),
-                p.getCategoria()
-            });
-        }
-=======
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
     }
 
     public void readJtable() {
@@ -103,7 +85,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
             }
         });
 
-<<<<<<< HEAD
         jButton2.setText("EXCLUIR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,19 +96,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
-=======
-        btnDelete.setText("EXCLUIR");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
-        btnEdit.setText("EDITAR");
-        btnEdit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditActionPerformed(evt);
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
             }
         });
 
@@ -192,7 +160,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -222,33 +189,11 @@ MercadinhoDTO produtos = new MercadinhoDTO();
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField1)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)))))
-=======
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel2)
-                    .addComponent(inputDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(inputPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(inputEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(inputCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 605, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -292,34 +237,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-=======
-                .addGap(179, 179, 179)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputNome, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(inputCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(110, Short.MAX_VALUE))
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -366,7 +283,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
-<<<<<<< HEAD
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -374,10 +290,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         int selectedRow = tabelaProdutos.getSelectedRow();
-=======
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-         int selectedRow = tabelaProdutos.getSelectedRow();
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
         if (selectedRow == -1) {
             JOptionPane.showMessageDialog(null, "Nenhum produto selecionado!");
         } else {
@@ -388,16 +300,10 @@ MercadinhoDTO produtos = new MercadinhoDTO();
             readJtable();
         }
     }
-<<<<<<< HEAD
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-=======
-    }//GEN-LAST:event_btnDeleteActionPerformed
-
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
         int linhaSelecionada = tabelaProdutos.getSelectedRow();
 
         if (linhaSelecionada != - 1) {          
@@ -415,7 +321,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
                 readJtable();
             }
         }
-<<<<<<< HEAD
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jLabel9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel9KeyPressed
@@ -424,9 +329,6 @@ MercadinhoDTO produtos = new MercadinhoDTO();
         loiginDo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel9KeyPressed
-=======
-    }//GEN-LAST:event_btnEditActionPerformed
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
 
     /**
      * @param args the command line arguments
@@ -472,13 +374,10 @@ MercadinhoDTO produtos = new MercadinhoDTO();
     private javax.swing.JTextField inputEstoque;
     private javax.swing.JTextField inputNome;
     private javax.swing.JTextField inputPreco;
-<<<<<<< HEAD
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-=======
->>>>>>> 32f57333803f890be8f5d3dbd8451a5fd2af02eb
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
